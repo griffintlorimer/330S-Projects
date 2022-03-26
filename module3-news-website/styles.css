@@ -1,0 +1,34 @@
+* {
+    border: 1px;
+    margin: 1px;
+    padding: 1px;
+}
+
+#like-btn, #likes, .btn-secondary {
+    display: inline;
+}
+input {
+    padding: 10px;
+    display: inline;
+
+}
+
+.btn {
+    padding: 10px;
+}
+
+#btn-sm, #btn-primary {
+    background-color: #DDDDDD;
+}
+
+#title{
+    margin-top: 15px;
+}
+
+#logout {
+    background-color: grey;
+}
+
+input {
+    border: 1px solid grey !important;
+}
