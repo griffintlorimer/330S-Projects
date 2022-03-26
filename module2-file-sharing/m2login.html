@@ -1,0 +1,49 @@
+<!--- This will be the user login page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+   body{
+       background-color: lightcoral;
+   }
+
+   h1{
+       text-align: center;
+       color: aquamarine;
+       font-weight: bold;   
+   }
+   input[type=text]{
+  width: 100%;
+  padding: 10px 20px;
+  margin: 2px 0;
+  box-sizing: border-box;
+   }
+   input[type = submit]{
+       padding: 10px 20px;
+       margin: 2px 0;
+   }
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to our File Sharing System</title>
+</head>
+
+<body>
+    <h1>Welcome to Taha and Griffins File Sharing System</h1>
+    <!-- username input -->
+    <div>
+    <form name="userinput" action="usernameauth.php" method="get">
+        Username: <input type="text" name="username">
+        <input type="submit" value="submit">
+    </form>
+    </div>
+    <!-- create another user -->
+    <div>
+    <form name="newuser" action="newuser.php" method="post">
+        Create another user: <input type="text" name="newname">
+        <input type="submit" value="submit">
+    </form> 
+    </div>
+</body>
+</html>

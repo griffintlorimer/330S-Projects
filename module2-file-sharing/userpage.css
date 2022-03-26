@@ -1,0 +1,36 @@
+body{
+background-color: lightcoral;
+}
+
+h2{
+font-weight: bold; 
+font-family: 'Courier New', Courier, monospace;  
+}
+ul{
+ margin-left: -20px;
+ line-height: 25px;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+label{
+ font-size: large;
+ font-family: 'Courier New', Courier, monospace;
+ font-weight: bold;
+ font-style: italic;
+
+}
+p{
+font-family: 'Courier New', Courier, monospace;
+font-style: italic;
+font-weight: bold;
+}
+input[type=text]{
+  width: 100%;
+  padding: 10px 20px;
+  margin: 6px 2px;
+  box-sizing: border-box;
+   }
+input[type = submit]{
+padding: 10px 20px;
+margin: 6px 2px;
+width:5%;
+}
