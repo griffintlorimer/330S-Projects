@@ -1,0 +1,169 @@
+/* General styling */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#top-bar{
+    height: 5vh;
+    display: flex;
+}
+
+#rest-of-page {
+    display: flex;
+}
+
+#event-section {
+    flex: 2;
+    height: 90vh;
+}
+
+#calendar-section {
+    flex: 8;
+    height: 90vh;
+}
+
+/* Top bar styling */
+#calendar-title{
+    margin-left: 1vw;
+}
+#login-btn {
+    margin-left: auto; 
+    margin-right: 1vw;
+    height: 5vh;
+}
+
+/* Event styling */
+#events-title, #create-event-title, #update-event-title {
+    text-align: center;
+    vertical-align: middle;
+}
+p {
+  margin-bottom: 0rem !important;
+}
+
+#create-events {
+    padding: 1vh;
+    height: 45vh;
+    width: 40vw;
+}
+#update-events{
+  padding: 1vh;
+  height: 47vh;
+  width: 40vw;
+  margin-bottom: 1vh;
+
+}
+
+#update-events {
+    margin-top: 2vh;
+}
+.btn{
+    margin-top: 1vh;
+}
+
+#delete-bnt {
+  width: 5vw;
+}
+
+/* Logout btn */
+#logout {
+  margin-left: 95%;
+  margin-top: 0%;
+}
+
+
+
+
+
+
+/* // calendar styling  */
+  button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #header {
+    padding: 10px;
+    color: black;
+    font-size: 22px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #header button {
+    background-color:#5265a3;
+  }
+  #container {
+    width: 770px;
+  }
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #a02485;
+  }
+  #weekdays div {
+    width: 100px;
+    padding: 14px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+  }
+
+  .day:hover {
+    background-color: rgba(0, 0, 255, 0.185);
+  }
+
+  .wed{
+      margin-left: 30px;
+  }
+  .thu{
+    margin-left: 20px;
+  }
+
+  .tue{
+    margin-left: 10px;
+  }
+
+  /* p.event-name{
+    font-size: 10px;
+    padding: 3px;
+    background-color: #58bae4;
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+  } */
+  p.event-date{
+    font-size: 2pt;
+  }
+  p.event-time{
+    font-size: 2pt;
+  }
+  
+
+  
+

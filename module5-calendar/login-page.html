@@ -1,0 +1,155 @@
+<!--- This is the user login page-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 2vh 20vw;
+      }
+
+      #login-btn {
+        margin-bottom: 5vh;
+      }
+    </style>
+    <script>
+      if (sessionStorage.getItem("status") != null) {
+        window.location.href = "./index.php";
+      }
+
+      function authUser() {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value; // Get the username from the form
+        const password = document.getElementById("password").value; // Get the password from the form
+        const data = { username: username, password: password };
+        fetch("login-auth.php", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "content-type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.message){
+                alert(data.message);
+                return;
+            }
+          })
+          .then((response) => response.json())
+          .then(window.location.replace("./index.php"))
+          // .then(data => alert(data.message))
+          .catch((err) => console.error(err));
+      }
+
+      function createNewUser() {
+        event.preventDefault();
+
+        const username = document.getElementById("new-username").value; // Get the username from the form
+        const password = document.getElementById("new-password").value; // Get the password from the form
+        const password_check = document.getElementById("new-password-check").value;
+        const ug = document.getElementById("user-group").value;
+
+        if (password != password_check) {
+          alert("PASSWORDS ARE NOT THE SAME");
+          return;
+        }
+
+        const data = { newuser: username, password: password, user_group: ug};
+        let obj;
+
+        fetch("new-user.php", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "content-type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then(window.location.replace("./index.php"))
+          .catch((err) => console.error(err));
+      }
+
+      window.onload = function () {
+        document
+          .getElementById("login-btn")
+          .addEventListener("click", authUser, false);
+        document
+          .getElementById("register")
+          .addEventListener("click", createNewUser, false);
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- username and password input input -->
+    <div>
+      <h3>Login to an existing user</h3>
+      <form>
+        Please log in
+        <input type="text" name="username" id="username" class="form-control" />
+        Password
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-control"
+        />
+        <button id="login-btn" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+    <!-- create another user -->
+    <div>
+      <h3>Register a new user</h3>
+      <form>
+        Create another user
+        <input
+          type="text"
+          name="newuser"
+          id="new-username"
+          class="form-control"
+        />
+        Password
+        <input
+          type="password"
+          name="password"
+          id="new-password"
+          class="form-control"
+        />
+        Please Enter your password again
+        <input
+          type="password"
+          id="new-password-check"
+          name="password-check"
+          class="form-control"
+        />
+        Enter a group for your user to belong to (optional)
+        <input
+          type="text"
+          id="user-group"
+          name="user-group"
+          class="form-control"
+        />
+        <button id="register" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+
+    <!-- return to homepage button -->
+    <div>
+      <form action="index.php">
+        <input
+          type="submit"
+          value="Return to Homepage"
+          class="btn btn-primary"
+        />
+      </form>
+    </div>
+  </body>
+</html>
