@@ -1,5 +1,5 @@
 # 330S Projects
-These are the projects that I worked on for Rapid Prototyping and Creative Programming CSE 330 at Washington University in St. Louis.  The course is still in progress
+These are the projects that I worked on for Rapid Prototyping and Creative Programming CSE 330 at Washington University in St. Louis in the Spring of 2020.  The course is still in progress
 
 ## Calendar
 The [calendar](http://ec2-44-202-112-86.compute-1.amazonaws.com/~griffinlorimer/m5/group/#loaded) was created with HTML, Bootstrap CSS, and JavaScript on the frontend, php on the backend, and a mySQL database.  All JS client side requests use the AJAX technique.  Users can create an account with a password, the username and encrypted password are stored in the DB.  Users can then create, update, and delete events.  All the data regarding the events is stored in the database.  Users also have the ability to add other users to their event, which causes the event to show on the other users calendar.  They can also create a group for their account can belong to and tag events as belonging to the group which allows all the users in the group to see the event.  They can also add categories to the events and filter by them.  The website is protected against SQL injections, protected against XSS attacks, and CSRF tokens are passed between HTTP requests. 
